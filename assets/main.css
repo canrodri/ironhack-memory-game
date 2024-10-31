@@ -134,8 +134,7 @@ p {
 }
 
 .hidden {
-  display: none;
-  visibility: hidden;
+  display: none !important;
 }
 
 #game-over-button {
