@@ -1,5 +1,5 @@
 const countdown = document.getElementById("time-left");
-const startingMinutes = 2;
+const startingMinutes = 2 ;
 let time = startingMinutes * 60;
 let timeInterval; // Variable global para el intervalo
 
@@ -24,11 +24,10 @@ function startTimer() {
     }, 1000);
 }
 function gameOver() {
-    document.getElementById("game-over").hidden= false;
+    document.getElementById("game-over").classList.remove("hidden");
     document.querySelectorAll(".card").forEach((card) => {
         card.style.pointerEvents = "none"; // Deshabilitar la interacción con las cartas
         
     });
     soundManager.gameOver();
-    // resetGame();
   }

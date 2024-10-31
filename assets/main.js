@@ -86,20 +86,24 @@ const handleCardClick = (card) => {
 
       // Actualizar el score
       document.getElementById('pairs-clicked').textContent = memoryGame.pairsClicked;
-      document.getElementById('pairs-guessed').textContent = memoryGame.pairsGuessed;
+      document.getElementById('pairs-guessed').textContent = memoryGame.pairsGuessed / 2;
     }
   }
 
 }
 // botón de reinicio
 document.getElementById("game-over-button").addEventListener("click", resetGame);
+document.getElementById("victory-button").addEventListener("click", resetGame);
+
 
 function resetGame() {
+  document.getElementById("victory").classList.add("hidden-victory");
+
     // Reinicia el temporizador
     clearInterval(timeInterval); // Limpia el intervalo anterior
     time = startingMinutes * 60; // Reinicia el tiempo
     countdown.textContent = `${startingMinutes}:00`; // Resetea el contador visible
-
+    document.getElementById("game-over").setAttribute("class", "hidden")
     // Reinicia el juego
     memoryGame = new MemoryGame(cards); 
     memoryGame.shuffleCards(); // Baraja las cartas nuevamente
@@ -126,12 +130,11 @@ function resetGame() {
     // Reinicia el score
     document.getElementById('pairs-clicked').textContent = 0;
     document.getElementById('pairs-guessed').textContent = 0;
+    document.getElementById('precision').textContent = 0;
+    
 
 
     });
-
-    // Oculta la pantalla de Game Over cuando se reinicia
-    document.getElementById("game-over").hidden = true;
 
     startTimer(); // Inicia el temporizador nuevamente
 }

@@ -4,7 +4,6 @@ class MemoryGame {
         this.pickedCards = [];
         this.pairsClicked = 0;
         this.pairsGuessed = 0;
-        this.totalPairs = cards.length / 2;
         this.soundManager = new SoundManager();
     
     }
@@ -39,8 +38,8 @@ class MemoryGame {
    
     checkIfFinished() {
    
-        if (this.pairsGuessed === this.totalPairs) {
-            document.getElementById("victory").hidden = false;
+        if (this.pairsGuessed === 24) {
+            document.getElementById("victory").classList.remove("hidden-victory");
             document.querySelectorAll(".card").forEach((card) => {
                 card.style.pointerEvents = "none"; 
             });
@@ -48,12 +47,13 @@ class MemoryGame {
             this.precision();
             clearInterval(timeInterval); // cuando encuentre todas las parejas se detiene el temp.
             this.soundManager.victory();
+
             
 
         }
     }
     gameOver() {
-        document.getElementById("game-over").hidden = false;
+        document.getElementById("game-over").classList.remove("hidden")
         document.querySelectorAll(".card").forEach((card) => {
             card.style.pointerEvents = "none"; // Deshabilitar la interacción con las cartas
             this.soundManager.gameOver();
