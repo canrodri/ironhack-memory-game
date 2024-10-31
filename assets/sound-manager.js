@@ -1,8 +1,8 @@
 class SoundManager {
     constructor() {
-        this.flipSound = new Audio("Audio/Audio_flip.wav");
-        this.victorySound = new Audio("Audio/Audio_victory.wav");
-        this.gameOverSound = new Audio("Audio/gameover.wav");
+        this.flipSound = new Audio("./Audio/Audio_flip.wav");
+        this.victorySound = new Audio("./Audio/Audio_victory.wav");
+        this.gameOverSound = new Audio("./Audio/gameover.wav");
 
     }
      flip() {

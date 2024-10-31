@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url(/img/bg3.jpg);
+  background-image: url(../img/bg3.jpg);
   background-size: cover;
   font-family: "Creepster", system-ui;
   display: flex;
