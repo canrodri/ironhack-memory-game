@@ -43,7 +43,7 @@ const renderBoard = () => {
     html += `
 <div class="card" data-card-name="${pic.name}">
  <div class="back" name="${pic.img}"></div>
- <div class="front" style="background-image: url('./img/${pic.img}'); background-size: cover;"></div>
+ <div class="front" style="background-image: url('img/${pic.img}'); background-size: cover;"></div>
 </div>
  `;
   });
